@@ -1,0 +1,265 @@
+/* --- استدعاء الخطوط --- */
+@font-face {
+    font-family: 'Cairo';
+    src: url('./fonts/CairoPlay-Black.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./fonts/CairoPlay-Black.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('./fonts/CairoPlay-Black.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body,
+p,
+span,
+button {
+    font-family: 'Cairo', sans-serif !important;
+    margin: 0;
+}
+
+/* --- ثيمات --- */
+:root {
+    --primary: #fbbf24;
+    --secondary: #0ea5e9;
+    --bg-morning-start: #dbeafe;
+    --bg-morning-end: #fef3c7;
+    --bg-evening-start: #1e293b;
+    --bg-evening-end: #334155;
+}
+
+/* Body */
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.5s ease;
+}
+
+/* ========================= */
+/* ⭐ شاشة البداية الجديدة */
+/* ========================= */
+
+#home-screen {
+    height: 100vh;
+    background: #fff3a0;
+    /* أصفر */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+#home-hadith {
+    color: #166534;
+    /* أخضر */
+    font-size: 16px;
+    line-height: 2;
+    max-width: 90%;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.home-buttons button {
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: white;
+    transition: 0.2s;
+}
+
+.home-buttons button:hover {
+    transform: scale(1.05);
+}
+
+#home-footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* ========================= */
+/* ⭐ التطبيق الرئيسي */
+/* ========================= */
+
+header {
+    text-align: center;
+    padding: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    animation: fadeDown 1s ease;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nav Tabs */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+nav button {
+    padding: 10px 22px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: var(--secondary);
+    color: white;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+nav button:hover {
+    transform: scale(1.05);
+    background: #0284c7;
+}
+
+nav button#generalBtn:hover {
+    background: #db2777;
+}
+
+/* Container */
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* بطاقة الذكر */
+.zekr {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zekr:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.zekr p {
+    font-size: 20px;
+    line-height: 2.1;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* فضل الذكر */
+.fadl {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: #f0f9ff;
+    border-right: 5px solid var(--secondary);
+    border-radius: 14px;
+    font-size: 15px;
+    color: #075985;
+}
+
+/* العداد الدائري */
+.counter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.counter span {
+    font-size: 15px;
+    color: #475569;
+    margin-left: 12px;
+}
+
+.counter button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: conic-gradient(var(--primary) 0deg, #e5e7eb 0deg);
+    color: white;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.counter button:hover {
+    transform: scale(1.1);
+}
+
+.counter button::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1e293b20;
+    z-index: -1;
+}
+
+.done {
+    opacity: 0.55;
+}
+
+/* حركة خلفية ناعمة */
+.light {
+    position: fixed;
+    top: -50px;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+    animation: float 12s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

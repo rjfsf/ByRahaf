@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أذكار الصباح والمساء</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ⭐ شاشة البداية (الحديث) -->
+  <div id="home-screen">
+
+    <div id="home-hadith">
+      - ألا أنبِّئُكُم بخيرِ أعمالِكُم ، وأزكاها عندَ مليكِكُم ، وأرفعِها في درجاتِكُم وخيرٌ لَكُم مِن إنفاقِ الذَّهبِ والورِقِ ، وخيرٌ لَكُم من أن تلقَوا عدوَّكُم فتضرِبوا أعناقَهُم ويضربوا أعناقَكُم ؟ قالوا : بلَى . قالَ : ذِكرُ اللَّهِ تَعالى قالَ معاذُ بنُ جبلٍ : ما شَيءٍ أنجى مِن عذابِ اللَّهِ من ذِكرِ اللَّهِ
+    </div>
+
+    <div class="home-buttons">
+      <button onclick="openApp('morning')">🌅 أذكار الصباح</button>
+      <button onclick="openApp('evening')">🌙 أذكار المساء</button>
+      <button onclick="openApp('general')">✨ أذكار عامة</button>
+    </div>
+
+    <!-- الدعاء الثابت -->
+    <div id="home-footer">
+      اللهم اجعله صدقة عن جميع المسلمين والمسلمات، الأحياء منهم والأموات.
+      اللهم ارحم عمي ناصر الفراج وجدتي نورة الجوير وجميع موتى المسلمين.
+    </div>
+
+  </div>
+
+  <!-- ⭐ الصفحة الرئيسية للأذكار -->
+  <div id="app-screen" style="display:none;">
+
+    <div class="light"></div>
+
+    <header id="page-header">🌅 أذكار الصباح</header>
+
+    <!-- Tabs للتنقل -->
+    <nav>
+      <button onclick="loadMorning()">🌅 الصباح</button>
+      <button onclick="loadEvening()">🌙 المساء</button>
+      <button onclick="loadGeneral()">✨ أذكار عامة</button>
+    </nav>
+
+    <div class="container" id="content"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
